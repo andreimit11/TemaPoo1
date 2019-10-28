@@ -1,2 +1,2 @@
 # TemaPoo1
-Tema 3.  Clasa ”Vector” 
+Tema 3---Clasa ”Vector” 
