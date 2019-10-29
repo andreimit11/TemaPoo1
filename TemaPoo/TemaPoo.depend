@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1572287979 source:c:\users\andrei cosor\desktop\poo\temapoo\main.cpp
+1572384260 source:c:\users\andrei cosor\desktop\poo\temapoo\main.cpp
 	<iostream>
 	"vector.h"
 
-1572287530 c:\users\andrei cosor\desktop\poo\temapoo\vector.h
+1572385118 c:\users\andrei cosor\desktop\poo\temapoo\vector.h
 	<bits/stdc++.h>
 
-1572287829 source:c:\users\andrei cosor\desktop\poo\temapoo\vector.cpp
-	<iostream>
+1572381953 source:c:\users\andrei cosor\desktop\poo\temapoo\vector.cpp
+	<bits/stdc++.h>
 	"vector.h"
 

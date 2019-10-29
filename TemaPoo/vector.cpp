@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 #include "vector.h"
 using namespace std;
 
@@ -64,19 +64,33 @@ void Vector::FindMax(){
     cout<<"\nMax="<<m<<"\nMax_pozition="<<poz<<"\n";
 }
 //-metoda publica pentru sortarea crescatoare a vectorului
-void Vector::Sort(){
-//Insertion sort
-    int i,t,j;
-    for (i = 1; i <(this->n);i++){
-        t= this->v[i];
-        j= i-1;
-        while (j >= 0 &&(this->v[j])>t)
+int pivot(int v[],int st,int dr) //partitionare Hoare
+{
+    int i=st,j=dr,di=0,dj=-1,aux;
+    while(i<j)
+    {
+        if(v[i]>v[j])
         {
-            this->v[j+1]=this->v[j];
-            j = j - 1;
+            aux=v[i];v[i]=v[j];v[j]=aux;
+            aux=di;di=-dj;dj=-aux;
         }
-        this->v[j+1]=t;
+        i=i+di;
+        j=j+dj;
     }
+    return i;
+}
+void quicksort(int v[],int st,int dr) //divide et impera
+{
+    int p;
+    if(st<dr)
+    {
+        p=pivot(v,st,dr);
+        quicksort(v,st,p-1);
+        quicksort(v,p+1,dr);
+    }
+}
+void Vector::Sort(){
+    quicksort(this->v,0,this->n-1);
 }
 //-produsul scalar a 2 vectori de aceeasi lungime, implementat prin supraincarcarea operatorului *
 int Vector::operator  *(Vector&b)
